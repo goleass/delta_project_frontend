@@ -17,7 +17,7 @@ run `git clone https://github.com/goleass/delta_project_frontend.git`
 > [NodeJS](https://nodejs.dev/) is required
 
 ```
-cd delta_project_api
+cd delta_project_frontend
 npm install
 ```
 
