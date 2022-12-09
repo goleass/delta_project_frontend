@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useCallback, useState } from "react"
+import { SetStateAction, useCallback, useState } from "react"
 import { Header } from "../partials/Header"
 import { Upload } from "../components/Upload";
 
@@ -17,6 +17,7 @@ function CreateStudent() {
   const [student, setStudent] = useState<StudentProps | null>(null)
   const [file, setFile] = useState()
 
+  // @ts-ignore
   const handleSave = async (e) => {
     try {
       if (!student?.name)
@@ -73,7 +74,7 @@ function CreateStudent() {
               <label htmlFor="floating_repeat_phone_number" className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Telefone</label>
             </div>
             <div className="relative z-0 mb-6 w-full group">
-              <Upload onUpload={(f) => setFile(f[0])} />
+              <Upload onUpload={(f: SetStateAction<undefined>[]) => setFile(f[0])} />
             </div>
             <div className='flex gap-1'>
               <button
